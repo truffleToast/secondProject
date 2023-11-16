@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.spring.mapper.BoardMapper">
+   
+   
+   
+   <select id="getLifeList"  resultType="kr.spring.entity.day_board">
+   SELECT A.*, B.user_nick FROM day_board A JOIN day_user B ON A.user_id = B.user_id WHERE A.bd_category = 'life' ORDER BY A.bd_idx DESC;
+   </select>
+   <select id="gettravelList"  resultType="kr.spring.entity.day_board">
+   SELECT A.*, B.user_nick FROM day_board A JOIN day_user B ON A.user_id = B.user_id WHERE A.bd_category = 'travel' ORDER BY A.bd_idx DESC;
+   </select>
+   <select id="getcultureList"  resultType="kr.spring.entity.day_board">
+   SELECT A.*, B.user_nick FROM day_board A JOIN day_user B ON A.user_id = B.user_id WHERE A.bd_category = 'culture' ORDER BY A.bd_idx DESC;
+   </select>
+   <select id="getitList"  resultType="kr.spring.entity.day_board">
+   SELECT A.*, B.user_nick FROM day_board A JOIN day_user B ON A.user_id = B.user_id WHERE A.bd_category = 'it' ORDER BY A.bd_idx DESC;
+   </select>
+   <select id="getsportList"  resultType="kr.spring.entity.day_board">
+   SELECT A.*, B.user_nick FROM day_board A JOIN day_user B ON A.user_id = B.user_id WHERE A.bd_category = 'sport' ORDER BY A.bd_idx DESC;
+   </select>
+   <select id="getissueList"  resultType="kr.spring.entity.day_board">
+   SELECT A.*, B.user_nick FROM day_board A JOIN day_user B ON A.user_id = B.user_id WHERE A.bd_category = 'issue' ORDER BY A.bd_idx DESC;   </select>
+   
+   
+</mapper>

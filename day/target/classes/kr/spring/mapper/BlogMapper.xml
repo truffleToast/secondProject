@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.spring.mapper.BlogMapper">
+	
+	
+	<!-- 블로그 관리(수정) -->
+	<update id="updateBlog" parameterType="kr.spring.entity.day_blog">
+		UPDATE day_blog 
+		SET blog_profile = #{blog_profile}, blog_greeting =#{blog_profile}, blog_header=#{blog_header}, blog_main=#{blog_body}, BLOG_SIDE=#{blog_side}, BLOG_TITLE=#{blog_title}
+		WHERE USERNAME=#{username}
+	</update>
+	
+<!-- 	<update id="updateSelectKey" parameterType="kr.spring.entity.Blog">
+		<selectKey keyProperty="username" resultType="kr.spring.entity.Blog" order="BEFORE">
+			SELECT USERNAME FROM DAYUSER
+		</selectKey>
+		UPDATE DAYBLOG SET 
+	</update>
+	
+	<update id="updateSelectKey" parameterType="kr.spring.entity.Blog">
+		UPDATE DAYBLOG 
+		SET BLOG_PROFILE=#{blog_profile}, BLOG_INTRO=#{blog_profile}, BLOG_HEADER=#{blog_header}, BLOG_BODY=#{blog_body}, BLOG_SIDE=#{blog_side}, BLOG_TITLE=#{blog_title}
+		WHERE USERNAME=#{username}
+		SELECT USERNAME FROM DAYUSER
+	</update> -->
+	
+	<!-- 블로그수정시 기본값 가져오기 -->
+	<select id="allblog" parameterType="string" resultType="kr.spring.entity.day_blog">
+	select * from day_blog where user_id = #{user_id}
+	</select>
+	
+</mapper>
+

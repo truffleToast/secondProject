@@ -1,0 +1,25 @@
+package kr.spring.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
+@Configuration
+@EnableWebMvc
+public class WebCrossDomainConfig extends WebMvcConfigurerAdapter {
+
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		// TODO 크로스 도메인 문제 해결
+	registry.addMapping("/**") //전부다 허용시키기
+			.allowedOrigins("*")
+			.allowedMethods("GET", "POST") //APTHEM 
+			.allowCredentials(false); // 쿠키 요청 허용
+	}
+	
+	
+	
+	
+}
