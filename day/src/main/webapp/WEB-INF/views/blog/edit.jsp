@@ -285,6 +285,22 @@ div#edit-tool {
 	height: 200px;
 }
 
+.imageEdit-modal__wrap{
+	position: fixed;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%, -50%);
+}
+
+.imageEdit-modal__background{
+	 /* 화면에 꽉 차게 하는 코드 */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* 어두운 배경색으로 만들기*/
+  z-index: 250; 
+}
+
 
 
 </style>
@@ -438,6 +454,7 @@ div#edit-tool {
          
          
          
+	
 <div class ="imageEdit-modal__wrap">
 	 <!-- 이미지 편집 플라스크 -->
        <div class="ai-imgEdit">
